@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+      <session-factory>
+            <!-- local connection properties -->
+            <property name="hibernate.connection.url">jdbc:mysql://51.68.227.19:3306/pierre</property>
+            <!-- Autre façon d'atteindre la BDD 
+            <property name="hibernate.connection.url">jdbc:mysql://mysql.snx.ovh:3306/sakila</property>
+            -->
+            <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+            <property name="hibernate.connection.username">M2I</property>
+            <property name="hibernate.connection.password">H3ll0M2I</property>
+            <property name="hibernate.connection.pool_size">10</property>
+
+            
+            <!-- dialect for MySQL -->
+            <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+            <property name="hibernate.show_sql">true</property>
+            <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+            <property name="cache.use_query_cache">false</property>
+
+            <mapping class="hibernate.Country"/>     
+            <mapping class="hibernate.Actor"/>   
+            <mapping class="hibernate.Language"/>   
+            <mapping class="hibernate.Film"/>  
+            <mapping class="hibernate.Category"/>   
+            <mapping class="hibernate.FilmActor"/>  
+            <mapping class="hibernate.FilmActorPK"/>
+            <mapping class="hibernate.FilmCategory"/>  
+            <mapping class="hibernate.FilmCategoryPK"/>
+
+
+
+        </session-factory>
+</hibernate-configuration>
